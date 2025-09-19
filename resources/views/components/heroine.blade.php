@@ -1,7 +1,7 @@
-<div class="fcksvp-heroine bg-accent text-white text-center mb-[15rem]">
+<div class="fcksvp-heroine bg-accent text-white text-center mb-[24vw] md:mb-[15rem]">
     <div class="fcksvp-container py-12">
-        <h1 class="text-[6rem] leading-[0.9] font-black z-10 relative">{{ __('landing.title') }}</h1>
-        <div class="fcksvp-heroine__image max-w-[66%] mx-auto mb-[-15rem] mt-[-1.25rem]">
+        <h1 class="text-[12vw] md:text-[6rem] leading-[0.9] font-black z-10 relative">{{ __('landing.title') }}</h1>
+        <div class="fcksvp-heroine__image max-w-[66%] mx-auto mb-[-24vw] md:mb-[-15rem] mt-[-1.25rem]">
             <picture>
             <source
                 type="image/avif"

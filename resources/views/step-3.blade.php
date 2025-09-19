@@ -1,3 +1,3 @@
 <x-app-layout>
-    Dankesscreen kommt noch
+    Dankesscreen so mit auf WA teilen und so kommt noch
 </x-app-layout>

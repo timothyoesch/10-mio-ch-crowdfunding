@@ -1,4 +1,4 @@
-<div class="fcksvp-toggle border-t-2 border-b-2 py-2 md:py-4">
+<div class="fcksvp-toggle border-t-2 border-b-2 py-4">
     <p class="fcksvp-toggle__title text-xl md:text-2xl font-bold flex gap-x-4 justify-between items-center cursor-pointer">
         <span>{{ $title }}</span>
         <x-heroicon-s-chevron-down class="h-6 md:h-8 mr-2 shrink-0"/>
