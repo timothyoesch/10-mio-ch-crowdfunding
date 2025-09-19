@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-accent py-12 text-white">
-    <div class="fcksvp-container pt-12">
+    <div class="fcksvp-container">
         <h2 class="fckscp-title !text-white">{{ __('step-2.form.title') }}</h2>
         <p class="text-2xl mt-6">{{ __('step-2.form.description') }}</p>
         <form
@@ -64,7 +64,7 @@
                 </div>
                 <div class="fcksvp-formgroup md:col-span-2 flex items-end">
                     <button type="submit" class="fcksvp-button fcksvp-button--white w-fit">
-                        {{ __('landing.form.button') }}
+                        {{ __('step-2.form.button') }}
                     </button>
                 </div>
             </div>

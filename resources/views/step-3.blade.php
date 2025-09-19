@@ -1,3 +1,12 @@
 <x-app-layout>
-    Dankesscreen so mit auf WA teilen und so kommt noch
+    <div class="min-h-screen bg-accent py-12 text-white">
+        <div class="fcksvp-container">
+            <h2 class="fckscp-title !text-white">
+                {{ __('step-3.title', ['fname' => $supporter->first_name, 'lname' => $supporter->last_name] ) }}
+            </h2>
+            <p class="text-2xl mt-6">{{ __('step-3.paragraph1') }}</p>
+            <p class="text-2xl mt-6">{{ __('step-3.paragraph2') }}</p>
+            <x-share-buttons />
+        </div>
+    </div>
 </x-app-layout>
