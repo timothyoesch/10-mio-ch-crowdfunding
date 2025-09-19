@@ -1,6 +1,6 @@
 import { CountUp } from 'countup.js';
-const animateCounter = (startVal, endVal, duration = 5) => {
-    new CountUp('amountcounter', endVal, {
+const animateCounter = (startVal, endVal, duration = 5, element = 'amountcounter') => {
+    new CountUp(element, endVal, {
         startVal: startVal,
         duration: duration,
         separator: "'",
@@ -17,16 +17,25 @@ const getTotalDonationsFromApi = async () => {
 
 window.addEventListener('DOMContentLoaded', async () => {
     let startVal = 0;
+    let startValPerMinute = 0;
     const data = await getTotalDonationsFromApi();
     let endVal = data.data.donations_total || 0;
+    let endValPerMinute = data.data.sum_per_minute_donations || 0;
     animateCounter(startVal, endVal, 1);
+    animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter');
     startVal = endVal;
+    startValPerMinute = endValPerMinute;
     setInterval(async () => {
         const data = await getTotalDonationsFromApi();
         let endVal = data.data.donations_total || 0;
         if (endVal !== startVal) {
             animateCounter(startVal, endVal);
             startVal = endVal;
+        }
+        let endValPerMinute = data.data.sum_per_minute_donations || 0;
+        if (endValPerMinute !== startValPerMinute) {
+            animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter');
+            startValPerMinute = endValPerMinute;
         }
     }, 5000); // Update every 5 seconds
 });

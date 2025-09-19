@@ -2,6 +2,7 @@
     "landing.title": "NEIN zur SVP-Hetze!",
     "landing.counter.before": "Wegen <b id=\"durationcounter\" class=\"font-mono\"></b> Minuten SVP-Hetze haben wir inzwischen",
     "landing.counter.after": "gesammelt!",
+    "landing.counter.note": "Pro Minute sind das <b id=\"perminutecounter\" class=\"font-mono\"></b> CHF.",
     "landing.form.label": "Ich bin auch dabei!",
     "landing.form.before": "Ich spende",
     "landing.form.scale.francs": "Franken",

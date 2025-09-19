@@ -90,4 +90,24 @@ form.fcksvp-donationform input[type="radio"] + label {
             console.error("Error:", error);
         });
     });
+
+    document.querySelectorAll('input[name="scale"]').forEach((elem) => {
+        elem.addEventListener("change", function(event) {
+            const scale = event.target.value;
+            console.log("Scale changed to:", scale);
+            let amountInput = document.querySelector('input[name="amount"]');
+            let amount = parseFloat(amountInput.value);
+
+            if (scale === "francs") {
+                // Convert from francs to rappens
+                amount = (amount / 100).toFixed(2);
+            } else {
+                // Convert from rappens to francs
+                amount = (amount * 100).toFixed(0);
+            }
+
+            // Update the amount input field with the converted value
+            amountInput.value = amount;
+        });
+    });
 </script>

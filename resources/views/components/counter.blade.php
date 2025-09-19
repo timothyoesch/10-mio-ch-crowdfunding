@@ -9,4 +9,5 @@
         <span>CHF</span>
     </div>
     <p class="text-3xl md:text-5xl">{!! __("landing.counter.after", ['duration' => 2]) !!}</p>
+    <p class="mt-6">{!! __("landing.counter.note") !!}</p>
 </div>
