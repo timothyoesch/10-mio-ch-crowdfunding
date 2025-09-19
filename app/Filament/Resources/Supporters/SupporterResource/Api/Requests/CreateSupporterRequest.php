@@ -23,7 +23,6 @@ class CreateSupporterRequest extends FormRequest
     {
         return [
 			'email' => 'required',
-			'phone' => 'required',
 			'first_name' => 'required',
 			'last_name' => 'required'
 		];
