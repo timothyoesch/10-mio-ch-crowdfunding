@@ -14,8 +14,7 @@ class VoteForm
             ->components([
                 DateTimePicker::make('begins_at')
                     ->required(),
-                DateTimePicker::make('ends_at')
-                    ->required(),
+                DateTimePicker::make('ends_at'),
                 Toggle::make('active')
                     ->required(),
             ]);

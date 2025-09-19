@@ -47,6 +47,8 @@ class VotesTable
             ->headerActions([
                 Action::make('startVote')
                     ->label('Start Vote')
+                    // Apply the update method from the VotePolicy
+                    ->authorize('create')
                     ->action(function () {
                         // Check if a vote is already active
                         $activeVote = \App\Models\Vote::where('active', true)->first();
@@ -58,6 +60,15 @@ class VotesTable
                                 ->send();
                             return;
                         } else {
+                            // Check that user can create a vote
+                            if (!\Gate::allows('create', new \App\Models\Vote())) {
+                                // Make a notification to inform the user
+                                \Filament\Notifications\Notification::make()
+                                    ->title('You do not have permission to start a new vote.')
+                                    ->danger()
+                                    ->send();
+                                return;
+                            }
                             // Start a new vote
                             $newVote = new \App\Models\Vote();
                             $newVote->begins_at = now();
@@ -76,6 +87,16 @@ class VotesTable
                     ->label('End Vote')
                     ->action(function () {
                         $activeVote = \App\Models\Vote::where('active', true)->first();
+                        // Check if user can update the active vote
+                        if (!\Gate::allows('update', $activeVote)) {
+                            // Make a notification to inform the user
+                            \Filament\Notifications\Notification::make()
+                                ->title('You do not have permission to end the active vote (you probably did not start it).')
+                                ->body('Owner is: ' . $activeVote?->user?->name ?? 'unknown')
+                                ->danger()
+                                ->send();
+                            return;
+                        }
                         if ($activeVote) {
                             $activeVote->ends_at = now();
                             $activeVote->active = false;

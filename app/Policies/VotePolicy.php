@@ -11,7 +11,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 class VotePolicy
 {
     use HandlesAuthorization;
-    
+
     public function viewAny(AuthUser $authUser): bool
     {
         return $authUser->can('ViewAny:Vote');
@@ -29,21 +29,37 @@ class VotePolicy
 
     public function update(AuthUser $authUser, Vote $vote): bool
     {
+        // Check if user has not role super_admin and is not the owner of the vote
+        if (!$authUser->hasRole('super_admin') && $vote->user_id !== $authUser->id) {
+            return false;
+        }
         return $authUser->can('Update:Vote');
     }
 
     public function delete(AuthUser $authUser, Vote $vote): bool
     {
+        // Check if user has not role super_admin and is not the owner of the vote
+        if (!$authUser->hasRole('super_admin') && $vote->user_id !== $authUser->id) {
+            return false;
+        }
         return $authUser->can('Delete:Vote');
     }
 
     public function restore(AuthUser $authUser, Vote $vote): bool
     {
+        // Check if user has not role super_admin and is not the owner of the vote
+        if (!$authUser->hasRole('super_admin') && $vote->user_id !== $authUser->id) {
+            return false;
+        }
         return $authUser->can('Restore:Vote');
     }
 
     public function forceDelete(AuthUser $authUser, Vote $vote): bool
     {
+        // Check if user has not role super_admin and is not the owner of the vote
+        if (!$authUser->hasRole('super_admin') && $vote->user_id !== $authUser->id) {
+            return false;
+        }
         return $authUser->can('ForceDelete:Vote');
     }
 
@@ -59,6 +75,10 @@ class VotePolicy
 
     public function replicate(AuthUser $authUser, Vote $vote): bool
     {
+        // Check if user has not role super_admin and is not the owner of the vote
+        if (!$authUser->hasRole('super_admin') && $vote->user_id !== $authUser->id) {
+            return false;
+        }
         return $authUser->can('Replicate:Vote');
     }
 
