@@ -18,6 +18,8 @@ class SupporterInfolist
                     ->label('Last Name'),
                 TextEntry::make('email')
                     ->label('Email address'),
+                TextEntry::make('phonenumber')
+                    ->label('Phone number'),
                 IconEntry::make('optin')
                     ->boolean(),
                 TextEntry::make('created_at')
