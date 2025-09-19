@@ -1,1 +1,1 @@
-import './bootstrap';
+import "./elements/counter.js";

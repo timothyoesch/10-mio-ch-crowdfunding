@@ -1,0 +1,15 @@
+created:
+    - database/factories/DonationFactory.php
+    - database/factories/SupporterFactory.php
+    - database/factories/VoteFactory.php
+    - database/migrations/2025_09_18_125925_create_donations_table.php
+    - database/migrations/2025_09_18_125926_create_supporters_table.php
+    - database/migrations/2025_09_18_125927_create_votes_table.php
+    - app/Models/Donation.php
+    - app/Models/Supporter.php
+    - app/Models/Vote.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string nullable' }
+    Donation: { uuid: 'string:36', type: 'enum:singular,perminute', amount: integer, relationships: { belongsTo: Supporter } }
+    Supporter: { name: string, email: 'string:email unique', optin: 'boolean default:false', relationships: { hasMany: Donation } }
+    Vote: { begins_at: datetime, ends_at: datetime, active: 'boolean default:true' }

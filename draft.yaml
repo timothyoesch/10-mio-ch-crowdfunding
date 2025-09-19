@@ -1,0 +1,19 @@
+models:
+  Donation:
+    uuid: string:36
+    type: enum:singular,perminute
+    amount: integer
+    relationships:
+      belongsTo: Supporter
+
+  Supporter:
+    name: string
+    email: string:email unique
+    optin: boolean default:false
+    relationships:
+      hasMany: Donation
+
+  Vote:
+    begins_at: datetime
+    ends_at: datetime
+    active: boolean default:true
