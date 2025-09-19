@@ -32,7 +32,7 @@ class CreateHandler extends Handlers {
         $supporter = $model::create([
             'email' => $request->email,
             'phonenumber' => $request->phone,
-            'optin' => $request->optin ?? false,
+            'optin' => (bool) $request->optin,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
         ]);
