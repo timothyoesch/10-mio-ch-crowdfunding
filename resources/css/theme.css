@@ -1,5 +1,6 @@
 @theme {
-    --color-accent: #7E013B;
+    --color-accent: #F99CBC;
+    --color-accent-dark: #4F035D;
     --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
