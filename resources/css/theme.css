@@ -18,7 +18,7 @@
 }
 
 .fcksvp-section {
-    @apply my-10 md:my-14;
+    @apply my-16 md:my-24;
 }
 
 html {

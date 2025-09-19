@@ -1,4 +1,5 @@
 import { CountUp } from 'countup.js';
+
 const animateCounter = (startVal, endVal, duration = 5, element = 'amountcounter') => {
     new CountUp(element, endVal, {
         startVal: startVal,
@@ -16,6 +17,7 @@ const getTotalDonationsFromApi = async () => {
 
 
 window.addEventListener('DOMContentLoaded', async () => {
+    if (!document.getElementById('amountcounter')) return;
     let startVal = 0;
     let startValPerMinute = 0;
     const data = await getTotalDonationsFromApi();

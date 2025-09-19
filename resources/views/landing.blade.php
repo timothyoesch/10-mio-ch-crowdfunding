@@ -5,4 +5,5 @@
     <x-form />
     <x-about />
     <x-questions />
+    <x-footer />
 </x-app-layout>

@@ -1,13 +1,14 @@
-<div class="fcksvp-container pt-24 pb-42 text-start" id="faq">
-    <h2 class="fckscp-title">{{ __('landing.about.faq.title') }}</h2>
-    <x-toggle title="{{ __('landing.about.howmuch.title') }}">
-        {!! __('landing.about.howmuch.description') !!}
-    </x-toggle>
-    <x-toggle title="{{ __('landing.about.who.title') }}">
-        {!!
-            Illuminate\Support\Str::markdown(__('landing.about.who.description'))
-        !!}
-    </x-toggle>
+<div class="fcksvp-container fcksvp-section text-start" id="faq">
+    <h2 class="fckscp-title">{{ __('landing.faq.title') }}</h2>
+    @for ($i = 1; $i <= 4; $i++)
+        <x-toggle title="{{ __('landing.faq.q' . $i) }}">
+            {!!
+                Illuminate\Support\Str::markdown(
+                    __('landing.faq.a' . $i)
+                )
+            !!}
+        </x-toggle>
+    @endfor
 </div>
 
 

@@ -1,48 +1,50 @@
-<div class="fcksvp-container pt-12" id="donate-link">
-    <h2 class="fckscp-title">{{ __('landing.form.label') }}</h2>
-</div>
-<div class="fcksvp-container__full w-fit">
-    <form
-        class="fcksvp-donationform w-fit text-2xl"
-        action="/api/donations"
-        method="POST"
-    >
-        @csrf
+<div class=" fcksvp-section">
+    <div class="fcksvp-container" id="donate-link">
+        <h2 class="fckscp-title">{{ __('landing.form.label') }}</h2>
+    </div>
+    <div class="fcksvp-container__full w-fit">
+        <form
+            class="fcksvp-donationform w-fit text-2xl"
+            action="/api/donations"
+            method="POST"
+        >
+            @csrf
 
-        <div class="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-6">
-            <p>{{ __('landing.form.before') }}</p>
-            <input
-                class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"
-                value="0.5"
-                type="string"
-                name="amount"
-            />
-            <div class="flex gap-x-2 items-center">
-                <div>
-                    <input type="radio" name="scale" id="franken" value="francs" checked />
-                    <label for="franken">{{__('landing.form.scale.francs')}}</label>
+            <div class="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-6">
+                <p>{{ __('landing.form.before') }}</p>
+                <input
+                    class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"
+                    value="0.5"
+                    type="string"
+                    name="amount"
+                />
+                <div class="flex gap-x-2 items-center">
+                    <div>
+                        <input type="radio" name="scale" id="franken" value="francs" checked />
+                        <label for="franken">{{__('landing.form.scale.francs')}}</label>
+                    </div>
+                    <span>
+                        |
+                    </span>
+                    <div>
+                        <input type="radio" name="scale" id="rappens" value="rappens" />
+                        <label for="rappens">{{__('landing.form.scale.rappens')}}</label>
+                    </div>
                 </div>
-                <span>
-                    |
-                </span>
-                <div>
-                    <input type="radio" name="scale" id="rappens" value="rappens" />
-                    <label for="rappens">{{__('landing.form.scale.rappens')}}</label>
+                <div class="flex">
+                    <p> {{ __('landing.form.after') }}</p>
+                    <a href="#faq">
+                        <x-heroicon-s-information-circle class="text-accent h-6 md:h-8 mr-2 shrink-0"/>
+                    </a>
                 </div>
             </div>
-            <div class="flex">
-                <p> {{ __('landing.form.after') }}</p>
-                <a href="#faq">
-                    <x-heroicon-s-information-circle class="text-accent h-6 md:h-8 mr-2 shrink-0"/>
-                </a>
+            <div class="fcksvp-container flex justify-center">
+                <button type="submit" class="fcksvp-button">
+                    {{ __('landing.form.button') }}
+                </button>
             </div>
-        </div>
-        <div class="fcksvp-container flex justify-center">
-            <button type="submit" class="fcksvp-button">
-                {{ __('landing.form.button') }}
-            </button>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 
 <style>
