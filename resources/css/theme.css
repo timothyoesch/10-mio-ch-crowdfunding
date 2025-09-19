@@ -1,5 +1,6 @@
 @theme {
     --color-accent: #3F8B65;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 .fcksvp-container {

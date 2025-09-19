@@ -1,3 +1,5 @@
+@import "./fonts.css";
+
 html {
     font-family: "Inter";
     font-size: clamp(14px, 1.5vw, 18px);
@@ -8,4 +10,12 @@ html {
     font-weight: 700;
     margin-bottom: 1rem;
     @apply text-accent;
+}
+
+a {
+    @apply underline text-accent;
+}
+
+.bg-accent a {
+    @apply !text-white;
 }
