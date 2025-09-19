@@ -1,5 +1,5 @@
 @theme {
-    --color-accent: #3F8B65;
+    --color-accent: #7E013B;
     --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
@@ -15,6 +15,10 @@
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.fcksvp-section {
+    @apply my-10 md:my-14;
 }
 
 html {

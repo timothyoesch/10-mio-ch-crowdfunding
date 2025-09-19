@@ -1,8 +1,11 @@
 {
-    "landing.title": "NEIN zur SVP-Hetze!",
+    "landing.title.1": "Jede SVP-Rede stärkt unser Nein:",
+    "landing.title.2": "Mach&nbsp;mit!",
     "landing.counter.before": "Wegen <b id=\"durationcounter\" class=\"font-mono\"></b> Minuten SVP-Hetze haben wir inzwischen",
     "landing.counter.after": "gesammelt!",
     "landing.counter.note": "Pro Minute sind das <b id=\"perminutecounter\" class=\"font-mono\"></b> CHF.",
+    "landing.counter.button": "Ich mache auch mit  🙌",
+    "landing.intro": "Ab heute debattiert der Nationalrat über die gefährliche SVP-Kündigungsinitiative. Noch nie haben sich so viele Parlamentarier:innen zu einer einzigen Vorlage für eine Wortmeldung eingetragen. Und hier drehen wir den Spiess um: Je länger die SVP ihre Abschottungsparolen verbreitet und Stimmung gegen Ausländerinnen und Ausländer macht, desto stärker machen wir unsere gemeinsame Nein-Kampagne.",
     "landing.form.label": "Ich bin auch dabei!",
     "landing.form.before": "Ich spende",
     "landing.form.scale.francs": "Franken",
