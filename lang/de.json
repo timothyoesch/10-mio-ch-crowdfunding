@@ -15,6 +15,7 @@
     "landing.form.scale.francs": "Franken",
     "landing.form.scale.rappens": "Rappen",
     "landing.form.after": "pro Minute SVP-Redezeit.",
+    "landing.form.donation_equivalence": "Das entspricht einer Spende von ca. <span id=\"total_donation\" class=\"font-mono font-bold\">:total_donation</span> CHF.",
     "landing.form.button": "Ich bin dabei 💪",
     "landing.initiative.title": "Warum ist die SVP-Kündigungsinitiative gefährlich?",
     "landing.initiative.content": "Die gefährliche SVP-Kündigungsinitiative entscheidet darüber, ob die Schweiz den rechtspopulistischen Weg der Abschottung von Trump, AfD oder Le Pen einschlägt oder ihre Offenheit mit der Personenfreizügigkeit und dem bilateralen Weg bewahrt. Eine Annahme der Initiative wäre ein hochgefährliches Experiment, dessen Folgen drastisch wären: Die bilateralen Abkommen mit der EU müssten gekündigt werden, soziale Errungenschaften wie der Lohnschutz würden gestoppt und der explodierende Fachkräftemangel im Gesundheitsbereich oder der Gastronomie würde sich massiv verschärfen.",

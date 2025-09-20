@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Ramsey\Uuid\Uuid;
 
 class Vote extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
 
     /**
      * The attributes that are mass assignable.
@@ -68,5 +70,21 @@ class Vote extends Model
             }
             $vote->user_id = request()->user()?->id ?? 1;
         });
+    }
+
+    /**
+     * Get the UUID of the active vote, else null.
+     */
+    public static function getActiveVoteUuid(): ?string
+    {
+        return static::where('active', true)->value('uuid') ?? null;
+    }
+
+    /**
+     * Column that uses UUIDs.
+     */
+    public function uniqueIds(): array
+    {
+        return ['uuid'];
     }
 }

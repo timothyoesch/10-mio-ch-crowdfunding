@@ -23,6 +23,7 @@ class SumHandler extends Handlers {
         $model = new (static::getModel());
 
         return static::sendSuccessResponse([
+            "active_vote" => $model->getActiveVoteUuid(),
             'seconds' => $model->getTotalDurationInSeconds(),
             'count' => $model->count(),
             'active' => (bool) $model->where("active", true)->count(),

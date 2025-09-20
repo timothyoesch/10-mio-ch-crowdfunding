@@ -10,7 +10,7 @@
         >
             @csrf
 
-            <div class="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-6">
+            <div class="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-4">
                 <p>{{ __('landing.form.before') }}</p>
                 <input
                     class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"
@@ -18,12 +18,12 @@
                     type="string"
                     name="amount"
                 />
-                <div class="flex gap-x-2 items-center">
+                <div class="flex flex-row md:flex-col gap-x-2 items-center md:items-start md:my-auto md:leading-[1.1] md:pt-4 md:text-xl">
                     <div>
-                        <input type="radio" name="scale" id="franken" value="francs" checked />
+                        <input type="radio" name="scale" id="franken" value="francs" checked/>
                         <label for="franken">{{__('landing.form.scale.francs')}}</label>
                     </div>
-                    <span>
+                    <span class="md:hidden">
                         |
                     </span>
                     <div>
@@ -38,6 +38,11 @@
                     </a>
                 </div>
             </div>
+            <p class="text-sm text-center mb-6">
+                {!! __('landing.form.donation_equivalence',
+                ['total_donation' => '150']
+                ) !!}
+            </p>
             <div class="fcksvp-container flex justify-center">
                 <button type="submit" class="fcksvp-button">
                     {{ __('landing.form.button') }}
@@ -57,10 +62,10 @@ form.fcksvp-donationform input[type="radio"] {
 /** Style labels based on whether their associated radio button is checked */
 form.fcksvp-donationform input[type="radio"]:checked + label {
     opacity: 1;
-    font-weight: bold;
 }
 
 form.fcksvp-donationform input[type="radio"] + label {
+    font-weight: bold;
     opacity: 0.25;
     transition: all 0.3s ease;
 }
@@ -111,5 +116,22 @@ form.fcksvp-donationform input[type="radio"] + label {
             // Update the amount input field with the converted value
             amountInput.value = amount;
         });
+    });
+
+    // Update total donation equivalence on amount input change
+    document.querySelector('input[name="amount"]').addEventListener("input", function(event) {
+        const amount = parseFloat(event.target.value);
+        const scale = document.querySelector('input[name="scale"]:checked').value;
+        let totalDonation = 0;
+        if (isNaN(amount)) {
+            document.getElementById("total_donation").innerText = "0";
+            return;
+        }
+        if (scale === "francs") {
+            totalDonation = (amount * 300).toFixed(0) || 0; // 300 minutes
+        } else {
+            totalDonation = ((amount / 100) * 300).toFixed(0) || 0; // 300 minutes
+        }
+        document.getElementById("total_donation").innerText = totalDonation;
     });
 </script>

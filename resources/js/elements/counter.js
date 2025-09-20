@@ -1,11 +1,13 @@
 import { CountUp } from 'countup.js';
 
-const animateCounter = (startVal, endVal, duration = 5, element = 'amountcounter') => {
+const polling = 3000; // 3 seconds
+const animateCounter = (startVal, endVal, duration = polling / 1000, element = 'amountcounter', useEasing = false, decimalPlaces = 0) => {
     new CountUp(element, endVal, {
         startVal: startVal,
         duration: duration,
         separator: "'",
-        useEasing: false,
+        useEasing: useEasing,
+        decimalPlaces: decimalPlaces,
     }).start();
 };
 
@@ -23,23 +25,23 @@ window.addEventListener('DOMContentLoaded', async () => {
     const data = await getTotalDonationsFromApi();
     let endVal = data.data.donations_total || 0;
     let endValPerMinute = data.data.sum_per_minute_donations || 0;
-    animateCounter(startVal, endVal, 1);
-    animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter');
+    animateCounter(startVal, endVal, 1, 'amountcounter', true, endVal > 1000 ? 0 : 2);
+    animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter', false, 0);
     startVal = endVal;
     startValPerMinute = endValPerMinute;
     setInterval(async () => {
         const data = await getTotalDonationsFromApi();
         let endVal = data.data.donations_total || 0;
         if (endVal !== startVal) {
-            animateCounter(startVal, endVal);
+            animateCounter(startVal, endVal, polling / 1000, 'amountcounter', false, endVal > 1000 ? 0 : 2);
             startVal = endVal;
         }
         let endValPerMinute = data.data.sum_per_minute_donations || 0;
         if (endValPerMinute !== startValPerMinute) {
-            animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter');
+            animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter', false, 0);
             startValPerMinute = endValPerMinute;
         }
-    }, 5000); // Update every 5 seconds
+    }, polling); // Update every 5 seconds
 });
 
 
@@ -64,11 +66,10 @@ const formatDuration = (totalSeconds) => {
 };
 
 var durationInterval;
-const updateDurationDisplay = async () => {
+const updateDurationDisplay = (voteData) => {
     if (durationInterval) {
         clearInterval(durationInterval);
     }
-    let voteData = await getVoteDataFromApi();
     let durationElement = document.getElementById('durationcounter');
     durationElement.innerHTML = formatDuration(voteData.data.seconds);
     if (voteData.data.active) {
@@ -81,8 +82,15 @@ const updateDurationDisplay = async () => {
 
 window.addEventListener('DOMContentLoaded', async () => {
     if (!document.getElementById('durationcounter')) return;
-    await updateDurationDisplay();
+    let voteData = await getVoteDataFromApi();
+    updateDurationDisplay(voteData);
+    let activeVote = voteData.data.active_vote;
+
     setInterval(async () => {
-        await updateDurationDisplay();
+        let updatedVoteData = await getVoteDataFromApi();
+        if (updatedVoteData.data.active_vote !== activeVote) {
+            activeVote = updatedVoteData.data.active_vote;
+            updateDurationDisplay(updatedVoteData);
+        }
     }, 10000); // Update every 10 seconds
 });
