@@ -1,4 +1,4 @@
-<div class="fcksvp-intro fcksvp-container fcksvp-section">
+<div class="fcksvp-intro fcksvp-container fcksvp-section !mt-8">
     <p class="text-2xl">{{__("landing.intro")}}</p>
 </div>
 <div class="fcksvp-about fcksvp-container fcksvp-section">

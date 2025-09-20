@@ -22,23 +22,23 @@
         <div class="fcksvp-footer__links">
             <p class="font-bold">{{ __('landing.footer.links.title') }}</p>
             <div class="flex flex-col gap-y-1 mt-3">
-                <a href="{{ __('landing.footer.links.line1.url') }}" class="flex gap-x-2 items-center" target="_blank">
+                <a href="{{ __('landing.footer.links.line1.url') }}" class="flex gap-x-2 items-center w-fit" target="_blank">
                     <span class="w-4 h-4">{{ svg('fab-instagram') }}</span>
                     <span>{{ __('landing.footer.links.line1.text') }}</span>
                 </a>
-                <a href="{{ __('landing.footer.links.line2.url') }}" class="flex gap-x-2 items-center" target="_blank">
+                <a href="{{ __('landing.footer.links.line2.url') }}" class="flex gap-x-2 items-center w-fit" target="_blank">
                     <span class="w-4 h-4">{{ svg('fab-tiktok') }}</span>
                     <span>{{ __('landing.footer.links.line2.text') }}</span>
                 </a>
-                <a href="{{ __('landing.footer.links.line3.url') }}" class="flex gap-x-2 items-center" target="_blank">
+                <a href="{{ __('landing.footer.links.line3.url') }}" class="flex gap-x-2 items-center w-fit" target="_blank">
                     <span class="w-4 h-4">{{ svg('fab-bluesky') }}</span>
                     <span>{{ __('landing.footer.links.line3.text') }}</span>
                 </a>
-                <a href="{{ __('landing.footer.links.line4.url') }}" class="flex gap-x-2 items-center" target="_blank">
+                <a href="{{ __('landing.footer.links.line4.url') }}" class="flex gap-x-2 items-center w-fit" target="_blank">
                     <span class="w-4 h-4">{{ svg('fab-mastodon') }}</span>
                     <span>{{ __('landing.footer.links.line4.text') }}</span>
                 </a>
-                <a href="{{ __('landing.footer.links.line5.url') }}" class="flex gap-x-2 items-center" target="_blank">
+                <a href="{{ __('landing.footer.links.line5.url') }}" class="flex gap-x-2 items-center w-fit" target="_blank">
                     <span class="w-4 h-4">{{ svg('fab-facebook') }}</span>
                     <span>{{ __('landing.footer.links.line5.text') }}</span>
                 </a>

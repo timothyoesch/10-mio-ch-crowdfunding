@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     let endVal = data.data.donations_total || 0;
     let endValPerMinute = data.data.sum_per_minute_donations || 0;
     animateCounter(startVal, endVal, 1, 'amountcounter', true, endVal > 1000 ? 0 : 2);
+    animateCounter(startVal, endVal, 1, 'fixed-amountcounter', true, endVal > 1000 ? 0 : 2);
     animateCounter(startValPerMinute, endValPerMinute, 1, 'perminutecounter', false, 0);
     startVal = endVal;
     startValPerMinute = endValPerMinute;
@@ -34,6 +35,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         let endVal = data.data.donations_total || 0;
         if (endVal !== startVal) {
             animateCounter(startVal, endVal, polling / 1000, 'amountcounter', false, endVal > 1000 ? 0 : 2);
+            animateCounter(startVal, endVal, polling / 1000, 'fixed-amountcounter', false, endVal > 1000 ? 0 : 2);
             startVal = endVal;
         }
         let endValPerMinute = data.data.sum_per_minute_donations || 0;

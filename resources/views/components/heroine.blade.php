@@ -23,9 +23,9 @@
         </div>
     </div>
     <div class="-mt-8 fcksvp-container">
-        <h2 class="text-2xl md:text-4xl underline text-accent-dark">{{__('landing.title.1')}}</h2>
+        <h2 class="text-2xl md:text-3xl underline text-accent-dark">{{__('landing.title.1')}}</h2>
         <div class="bg-accent-dark p-3 w-fit mx-auto text-white mt-2 md:mt-4">
-            <h1 class="text-5xl md:text-7xl font-black uppercase">{!! __('landing.title.2') !!}</h1>
+            <h1 class="text-4xl md:text-6xl font-black uppercase">{!! __('landing.title.2') !!}</h1>
         </div>
     </div>
 </div>

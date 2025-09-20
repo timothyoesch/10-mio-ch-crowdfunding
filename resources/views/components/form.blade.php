@@ -74,7 +74,11 @@ form.fcksvp-donationform input[type="radio"] + label {
 <script>
     document.querySelector("form.fcksvp-donationform").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission
-
+        setTimeout(() => {
+            let submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "{{__('landing.form.button.processing')}}"; // Optional: Change button text to indicate processing
+        }, 500);
         const formData = new FormData(event.target);
         // Append type of donation
         formData.append("type", "perminute");
@@ -89,12 +93,14 @@ form.fcksvp-donationform input[type="radio"] + label {
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Success:", data);
             if (data.data.uuid) {
                 window.location.href = `/2/${data.data.uuid}`;
             }
         }).catch((error) => {
             console.error("Error:", error);
+            // Re-enable the submit button in case of error
+            submitButton.disabled = false;
+            submitButton.innerText = "{{ __('landing.form.button') }}"; // Reset button text
         });
     });
 

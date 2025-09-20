@@ -94,7 +94,11 @@
 <script>
     document.querySelector("form.fcksvp-supporterform").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission
-
+        setTimeout(() => {
+            let submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerText = "{{ __('step-2.form.button.processing') }}"; // Optional
+        }, 500);
         const formData = new FormData(event.target);
 
         // Send the POST request using Fetch API
@@ -107,7 +111,6 @@
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Success:", data);
             if (data.data.uuid) {
                 window.location.href = `/3/${data.data.uuid}`;
             }
