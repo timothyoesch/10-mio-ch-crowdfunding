@@ -1,6 +1,16 @@
 <div class="fcksvp-container fcksvp-section text-start" id="faq">
     <h2 class="fckscp-title">{{ __('landing.faq.title') }}</h2>
-    @for ($i = 1; $i <= 4; $i++)
+    <x-toggle title="{{ __('landing.faq.q1') }}">
+        {!!
+            Illuminate\Support\Str::markdown(
+                __('landing.faq.a1', [
+                    "estimated_duration" => round(app(App\Settings\SiteSettings::class)->estimated_duration, 0),
+                    "estimated_donation" => round(app(App\Settings\SiteSettings::class)->estimated_duration * 0.25, 2)
+                ])
+            )
+        !!}
+    </x-toggle>
+    @for ($i = 2; $i <= 4; $i++)
         <x-toggle title="{{ __('landing.faq.q' . $i) }}">
             {!!
                 Illuminate\Support\Str::markdown(

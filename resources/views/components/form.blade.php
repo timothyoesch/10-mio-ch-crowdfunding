@@ -40,7 +40,7 @@
             </div>
             <p class="text-sm text-center mb-6">
                 {!! __('landing.form.donation_equivalence',
-                ['total_donation' => '150']
+                ['total_donation' => 0.5 * app(\App\Settings\SiteSettings::class)->estimated_duration]
                 ) !!}
             </p>
             <div class="fcksvp-container flex justify-center">
@@ -134,9 +134,9 @@ form.fcksvp-donationform input[type="radio"] + label {
             return;
         }
         if (scale === "francs") {
-            totalDonation = (amount * 300).toFixed(0) || 0; // 300 minutes
+            totalDonation = (amount * {{app(\App\Settings\SiteSettings::class)->estimated_duration}}).toFixed(0) || 0; // 300 minutes
         } else {
-            totalDonation = ((amount / 100) * 300).toFixed(0) || 0; // 300 minutes
+            totalDonation = ((amount / 100) * {{app(\App\Settings\SiteSettings::class)->estimated_duration}}).toFixed(0) || 0; // 300 minutes
         }
         document.getElementById("total_donation").innerText = totalDonation;
     });
