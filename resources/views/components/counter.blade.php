@@ -9,7 +9,7 @@
         <span>CHF</span>
     </div>
     <p class="text-3xl md:text-5xl">{!! __("landing.counter.after", ['duration' => 2]) !!}</p>
-    <p class="mt-6">{!! __("landing.counter.note") !!}</p>
+    <p class="mt-6 text-sm">{!! __("landing.counter.note") !!}</p>
     <a href="#donate-link" class="fcksvp-button !no-underline block w-fit mx-auto mt-6 text-2xl">
         {{ __('landing.counter.button') }}
     </a>
