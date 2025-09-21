@@ -18,7 +18,7 @@ class VoteResource extends Resource
 {
     protected static ?string $model = Vote::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftEllipsis;
 
     protected static ?string $recordTitleAttribute = 'id';
 
