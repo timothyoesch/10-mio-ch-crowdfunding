@@ -1,6 +1,8 @@
 {
-    "landing.title.1": "Chaque discours de l’UDC renforce notre non :",
-    "landing.title.2": "Participez maintenant !",
+    "og.title": "Chaque discours de l’UDC renforce notre non : Participez maintenant !",
+    "og.description": "Dès aujourd’hui, le Conseil national débat de la dangereuse initiative de résiliation de l’UDC. Plus l’UDC parle longtemps, plus nous collectons d’argent.",
+    "og.url": "https://non-par-minute.ch",
+    "landing.title": "Chaque discours de l’UDC renforce notre non : Participez maintenant !",
     "landing.counter.before": "En raison de <b id=\"durationcounter\" class=\"font-mono\"></b> minutes de propagande UDC, nous avons déjà",
     "landing.counter.after": "collecté !",
     "landing.counter.note": "Cela fait environ <b id=\"perminutecounter\" class=\"font-mono\"></b> CHF par minute.",
