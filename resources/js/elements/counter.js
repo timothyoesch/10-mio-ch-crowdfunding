@@ -90,9 +90,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     setInterval(async () => {
         let updatedVoteData = await getVoteDataFromApi();
-        if (updatedVoteData.data.active_vote !== activeVote) {
-            activeVote = updatedVoteData.data.active_vote;
-            updateDurationDisplay(updatedVoteData);
-        }
+        activeVote = updatedVoteData.data.active_vote;
+        updateDurationDisplay(updatedVoteData);
     }, 10000); // Update every 10 seconds
 });
