@@ -1,13 +1,13 @@
 <div class="fcksvp-section !mt-8">
     <div class="w-fit">
         <form
-            class="fcksvp-donationform w-fit text-2xl"
+            class="fcksvp-donationform w-fit text-xl md:text-2xl"
             action="/api/donations"
             method="POST"
         >
             @csrf
 
-            <div class="flex flex-col md:flex-row items-center md:items-baseline gap-4 mb-4">
+            <div class="flex flex-col md:flex-row md:items-baseline gap-4 mb-4">
                 <p>{{ __('landing.form.before') }}</p>
                 <input
                     class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"

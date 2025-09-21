@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="min-h-screen bg-accent py-6 text-accent">
+    <div class="min-h-screen bg-background py-6 text-dark">
         <div class="fcksvp-container">
             <a href="/" class="italic flex gap-2 items-center mb-6 !no-underline">
                 @svg("fas-arrow-left", 'w-6 h-6')

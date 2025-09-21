@@ -1,9 +1,9 @@
-<div class="min-h-screen bg-accent py-12 text-accent">
+<div class="min-h-screen bg-background py-12 text-dark">
     <div class="fcksvp-container">
         <h2 class="fckscp-title !text-accent">{{ __('step-2.form.title') }}</h2>
-        <p class="text-2xl mt-6">{{ __('step-2.form.description') }}</p>
+        <p class="text-xl md:text-2xl mt-6">{{ __('step-2.form.description') }}</p>
         <form
-            class="fcksvp-supporterform text-2xl mt-12"
+            class="fcksvp-supporterform text-xl md:text-2xl mt-12"
             action="/api/supporters"
             method="POST"
         >
