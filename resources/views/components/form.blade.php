@@ -1,5 +1,5 @@
 <div class="fcksvp-section !mt-8">
-    <div class="w-fit">
+    <div class="mx-auto md:mx-unset">
         <form
             class="fcksvp-donationform w-fit text-xl md:text-2xl"
             action="/api/donations"
@@ -7,7 +7,7 @@
         >
             @csrf
 
-            <div class="flex flex-col md:flex-row md:items-baseline gap-4 mb-4">
+            <div class="flex flex-col md:flex-row items-center emd:items-baseline gap-4 mb-4">
                 <p>{{ __('landing.form.before') }}</p>
                 <input
                     class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"
@@ -40,7 +40,7 @@
                 ['total_donation' => 0.5 * app(\App\Settings\SiteSettings::class)->estimated_duration]
                 ) !!}
             </p>
-            <div class="flex">
+            <div class="flex justify-center md:justify-start">
                 <button type="submit" class="fcksvp-button">
                     {{ __('landing.form.button') }}
                 </button>
