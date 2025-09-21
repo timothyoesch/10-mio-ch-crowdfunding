@@ -14,6 +14,7 @@
                     value="0.5"
                     type="string"
                     name="amount"
+                    inputmode="numeric"
                 />
                 <div class="flex flex-row md:flex-col gap-x-2 items-center md:items-start md:my-auto md:leading-[1.1] md:pt-4 md:text-xl">
                     <div>
