@@ -1,7 +1,7 @@
 <div class="fcksvp-section !mt-8">
-    <div class="mx-auto md:mx-unset">
+    <div>
         <form
-            class="fcksvp-donationform w-fit text-xl md:text-2xl"
+            class="fcksvp-donationform w-fit text-xl md:text-2xl mx-auto md:mx-unset"
             action="/api/donations"
             method="POST"
         >
