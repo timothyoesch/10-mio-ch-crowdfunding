@@ -8,13 +8,13 @@ html {
 .fckscp-title {
     font-weight: 700;
     margin-bottom: 1rem;
-    @apply text-3xl md:text-4xl text-accent-dark text-center leading-[1];
+    @apply text-3xl md:text-4xl text-accent leading-[1];
 }
 
 a:not(.fcksvp-button) {
-    @apply underline text-accent-dark hover:text-accent transition;
+    @apply underline text-accent hover:text-accent transition;
 }
 
 .bg-accent a {
-    @apply !text-accent-dark;
+    @apply !text-accent;
 }

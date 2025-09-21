@@ -1,6 +1,6 @@
-<div class="min-h-screen bg-accent py-12 text-accent-dark">
+<div class="min-h-screen bg-accent py-12 text-accent">
     <div class="fcksvp-container">
-        <h2 class="fckscp-title !text-accent-dark">{{ __('step-2.form.title') }}</h2>
+        <h2 class="fckscp-title !text-accent">{{ __('step-2.form.title') }}</h2>
         <p class="text-2xl mt-6">{{ __('step-2.form.description') }}</p>
         <form
             class="fcksvp-supporterform text-2xl mt-12"
@@ -54,7 +54,7 @@
                     <label class="inline-flex">
                         <input
                             type="checkbox"
-                            class="form-checkbox h-5 w-5 text-accent-dark"
+                            class="form-checkbox h-5 w-5 text-accent"
                             name="optin"
                         />
                         <span class="ml-2 text-xl">{!!
@@ -82,7 +82,7 @@
 }
 
 .fcksvp-formgroup input {
-    border-bottom: 3px solid var(--color-accent-dark);
+    border-bottom: 3px solid var(--color-accent);
     padding: 0.5rem;
 }
 

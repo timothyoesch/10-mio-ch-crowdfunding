@@ -1,8 +1,5 @@
-<div class=" fcksvp-section">
-    <div class="fcksvp-container" id="donate-link">
-        <h2 class="fckscp-title">{{ __('landing.form.label') }}</h2>
-    </div>
-    <div class="fcksvp-container__full w-fit">
+<div class="fcksvp-section !mt-8">
+    <div class="w-fit">
         <form
             class="fcksvp-donationform w-fit text-2xl"
             action="/api/donations"
@@ -38,12 +35,12 @@
                     </a>
                 </div>
             </div>
-            <p class="text-sm text-center mb-6">
+            <p class="text-sm mb-6">
                 {!! __('landing.form.donation_equivalence',
                 ['total_donation' => 0.5 * app(\App\Settings\SiteSettings::class)->estimated_duration]
                 ) !!}
             </p>
-            <div class="fcksvp-container flex justify-center">
+            <div class="flex">
                 <button type="submit" class="fcksvp-button">
                     {{ __('landing.form.button') }}
                 </button>

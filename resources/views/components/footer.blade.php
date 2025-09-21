@@ -1,5 +1,5 @@
-<div class="fcksvp-container fcksvp-section !mb-8">
-    <div class="flex flex-col md:flex-row gap-y-8 justify-between">
+<div class="">
+    <div class="flex flex-col-reverse md:flex-row gap-y-8 justify-between">
         <div class="fcksvp-footer__address">
             <p class="font-bold">{{ __('landing.footer.address.title') }}</p>
             <p>
@@ -53,7 +53,7 @@
     }
 
     .fcksvp-footer__links a {
-        color: black;
+        color: white;
         text-decoration: none;
         transition: color 0.3s ease;
     }

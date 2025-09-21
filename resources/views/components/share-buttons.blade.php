@@ -32,7 +32,7 @@
         {{ __('step-3.share.threads') }}
     </a>
     <a
-        class="fcksvp-button flex justify-center items-center text-2xl gap-x-2 !bg-white !no-underline !text-accent-dark"
+        class="fcksvp-button flex justify-center items-center text-2xl gap-x-2 !bg-white !no-underline !text-accent"
         href="mailto:?subject={{ rawurlencode(__('step-3.subject')) }}&body={{ rawurlencode(__('step-3.message')) }}"
         target="_blank"
     >

@@ -1,6 +1,5 @@
 {
-    "landing.title.1": "Jede SVP-Rede stärkt unser Nein:",
-    "landing.title.2": "Jetzt&nbsp;mitmachen!",
+    "landing.title": "Jede SVP-Rede stärkt unser Nein: Jetzt spenden!",
     "landing.counter.before": "Wegen <b id=\"durationcounter\" class=\"font-mono\"></b> Minuten SVP-Propaganda haben wir inzwischen",
     "landing.counter.after": "gesammelt!",
     "landing.counter.note": "Pro Minute sind das etwa <b id=\"perminutecounter\" class=\"font-mono\"></b> CHF.",

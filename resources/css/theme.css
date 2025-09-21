@@ -1,21 +1,22 @@
 @theme {
-    --color-accent: #F99CBC;
-    --color-accent-dark: #4F035D;
+    --color-background: #e9e3d3;
+    --color-dark: #242424;
+    --color-accent: #e4002b;
     --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
 .fcksvp-container {
-    max-width: 800px;
+    width: calc(100% - 6vw);
+    max-width: clamp(1050px, 84vw, 1150px);
     margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: clamp(15px, 3vw, 30px) clamp(15px, 5vw, 80px);
+    background-color: white;
 }
 
-.fcksvp-container__full {
-    max-width: 100%;
+.fcksvp-container__2 {
+    width: calc(100% - 6vw);
+    max-width: clamp(1150px, 84vw, 1350px);
     margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 .fcksvp-section {

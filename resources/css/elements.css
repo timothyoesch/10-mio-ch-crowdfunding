@@ -1,9 +1,9 @@
 .fcksvp-button {
-    @apply bg-accent-dark text-white font-bold py-3 px-6 rounded-lg hover:bg-accent-dark/90 transition cursor-pointer;
+    @apply bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-accent/90 transition cursor-pointer;
 }
 
 .fcksvp-button--white {
-    @apply bg-white text-accent-dark hover:bg-white/90;
+    @apply bg-white text-accent hover:bg-white/90;
 }
 
 .fcksvp-toggle+.fcksvp-toggle {

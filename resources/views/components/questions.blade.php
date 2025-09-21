@@ -1,4 +1,4 @@
-<div class="fcksvp-container fcksvp-section text-start" id="faq">
+<div class="fcksvp-section !mb-8 text-start" id="faq">
     <h2 class="fckscp-title">{{ __('landing.faq.title') }}</h2>
     <x-toggle title="{{ __('landing.faq.q1') }}">
         {!!
