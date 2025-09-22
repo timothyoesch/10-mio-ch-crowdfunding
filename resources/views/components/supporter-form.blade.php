@@ -111,6 +111,8 @@
         })
         .then(response => response.json())
         .then(data => {
+            submitButton.disabled = false;
+            submitButton.innerText = "{{ __('step-2.form.button') }}";
             if (data.data.uuid) {
                 window.location.href = `/3/${data.data.uuid}`;
             }

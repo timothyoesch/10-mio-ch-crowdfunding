@@ -94,6 +94,8 @@ form.fcksvp-donationform input[type="radio"] + label {
         })
         .then(response => response.json())
         .then(data => {
+            submitButton.disabled = false;
+            submitButton.innerText = "{{ __('landing.form.button') }}";
             if (data.data.uuid) {
                 window.location.href = `/2/${data.data.uuid}`;
             }
@@ -101,7 +103,7 @@ form.fcksvp-donationform input[type="radio"] + label {
             console.error("Error:", error);
             // Re-enable the submit button in case of error
             submitButton.disabled = false;
-            submitButton.innerText = "{{ __('landing.form.button') }}"; // Reset button text
+            submitButton.innerText = "{{ __('landing.form.button') }}";
         });
     });
 
