@@ -18,6 +18,7 @@
                     max="10000"
                     name="amount"
                     inputmode="numeric"
+                    aria-label="Betrag in Franken oder Rappen"
                 />
                 <div class="flex flex-row md:flex-col gap-x-2 items-center md:items-start md:my-auto md:leading-[1.1] md:pt-4 md:text-xl">
                     <div>
@@ -34,7 +35,7 @@
                 </div>
                 <div class="flex">
                     <p> {{ __('landing.form.after') }}</p>
-                    <a href="#faq">
+                    <a href="#faq" name="Häufige Fragen">
                         <x-heroicon-s-information-circle class="text-accent h-6 md:h-8 mr-2 shrink-0"/>
                     </a>
                 </div>
@@ -62,12 +63,12 @@ form.fcksvp-donationform input[type="radio"] {
 
 /** Style labels based on whether their associated radio button is checked */
 form.fcksvp-donationform input[type="radio"]:checked + label {
-    opacity: 1;
+    color: var(--color-accent);
+    font-weight: bold;
 }
 
 form.fcksvp-donationform input[type="radio"] + label {
-    font-weight: bold;
-    opacity: 0.25;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 </style>

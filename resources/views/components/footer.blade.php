@@ -52,12 +52,16 @@
         margin-top: 0.75rem;
     }
 
-    .fcksvp-footer__links a {
+    .fcksvp-footer__address a {
+        text-decoration: underline !important;
+    }
+
+    .fcksvp-footer__links a, .fcksvp-footer__address a {
         color: white;
         text-decoration: none;
         transition: color 0.3s ease;
     }
-    .fcksvp-footer__links a:hover {
+    .fcksvp-footer__links a:hover, .fcksvp-footer__address a:hover {
         color: var(--color-accent);
     }
 </style>
