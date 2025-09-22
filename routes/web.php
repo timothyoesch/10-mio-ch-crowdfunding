@@ -2,7 +2,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    sleep(4); // Simulate some loading time
     return view("landing");
 });
 
