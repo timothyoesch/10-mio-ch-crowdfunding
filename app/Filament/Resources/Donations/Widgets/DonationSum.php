@@ -9,10 +9,19 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class DonationSum extends StatsOverviewWidget
 {
+    public static ?int $sort = 1;
     protected function getStats(): array
     {
         return [
-            Stat::make("Donations per Minute", Donation::all()->sum("amount") . " CHF"),
+            Stat::make(
+                "Donations per Minute",
+                number_format(
+                    Donation::all()->sum("amount"),
+                    2,
+                    '.',
+                    "'"
+                ) . " CHF"
+            ),
             Stat::make(
                 "Donations total",
                 number_format(
