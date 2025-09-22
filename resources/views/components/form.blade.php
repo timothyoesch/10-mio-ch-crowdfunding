@@ -19,6 +19,7 @@
                     name="amount"
                     inputmode="numeric"
                     aria-label="Betrag in Franken oder Rappen"
+                    required
                 />
                 <div class="flex flex-row md:flex-col gap-x-2 items-center md:items-start md:my-auto md:leading-[1.1] md:pt-4 md:text-xl">
                     <div>
