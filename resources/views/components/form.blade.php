@@ -109,7 +109,6 @@ form.fcksvp-donationform input[type="radio"] + label {
     document.querySelectorAll('input[name="scale"]').forEach((elem) => {
         elem.addEventListener("change", function(event) {
             const scale = event.target.value;
-            console.log("Scale changed to:", scale);
             let amountInput = document.querySelector('input[name="amount"]');
             let amount = parseFloat(amountInput.value);
 
