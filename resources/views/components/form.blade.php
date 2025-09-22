@@ -12,7 +12,10 @@
                 <input
                     class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"
                     value="50"
-                    type="string"
+                    type="number"
+                    step="1"
+                    min="1"
+                    max="10000"
                     name="amount"
                     inputmode="numeric"
                 />
@@ -112,9 +115,15 @@ form.fcksvp-donationform input[type="radio"] + label {
             if (scale === "francs") {
                 // Convert from francs to rappens
                 amount = (amount / 100).toFixed(2);
+                amountInput.setAttribute("max", "100");
+                amountInput.setAttribute("min", "0.01");
+                amountInput.setAttribute("step", "0.01");
             } else {
                 // Convert from rappens to francs
                 amount = (amount * 100).toFixed(0);
+                amountInput.setAttribute("max", "10000");
+                amountInput.setAttribute("min", "1");
+                amountInput.setAttribute("step", "1");
             }
 
             // Update the amount input field with the converted value
