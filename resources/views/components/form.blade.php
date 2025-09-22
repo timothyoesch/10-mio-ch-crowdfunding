@@ -11,21 +11,21 @@
                 <p>{{ __('landing.form.before') }}</p>
                 <input
                     class="border-b-6 focus:border-accent focus:text-accent focus:outline-none w-40 text-6xl text-center font-black bg-transparent"
-                    value="0.5"
+                    value="50"
                     type="string"
                     name="amount"
                     inputmode="numeric"
                 />
                 <div class="flex flex-row md:flex-col gap-x-2 items-center md:items-start md:my-auto md:leading-[1.1] md:pt-4 md:text-xl">
                     <div>
-                        <input type="radio" name="scale" id="franken" value="francs" checked/>
+                        <input type="radio" name="scale" id="franken" value="francs"/>
                         <label for="franken">{{__('landing.form.scale.francs')}}</label>
                     </div>
                     <span class="md:hidden">
                         |
                     </span>
                     <div>
-                        <input type="radio" name="scale" id="rappens" value="rappens" />
+                        <input type="radio" name="scale" id="rappens" value="rappens" checked/>
                         <label for="rappens">{{__('landing.form.scale.rappens')}}</label>
                     </div>
                 </div>

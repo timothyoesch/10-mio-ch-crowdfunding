@@ -10,7 +10,7 @@
             )
         !!}
     </x-toggle>
-    @for ($i = 2; $i <= 4; $i++)
+    @for ($i = 2; $i <= 2; $i++)
         <x-toggle title="{{ __('landing.faq.q' . $i) }}">
             {!!
                 Illuminate\Support\Str::markdown(
