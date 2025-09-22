@@ -60,7 +60,7 @@ class Donation extends Model
 
     public static function getDonationsPerMinute(): float
     {
-        return static::where('type', 'perminute')->sum('amount') / 100;
+        return static::whereNot('supporter_id', null)->sum('amount') / 100;
     }
 
     public static function getTotalDonations(): float
