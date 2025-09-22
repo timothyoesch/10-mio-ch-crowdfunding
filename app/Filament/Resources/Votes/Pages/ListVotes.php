@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\Votes\Pages;
 
-use App\Filament\Resources\Votes\VoteResource;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\Votes\VoteResource;
 
 class ListVotes extends ListRecords
 {
@@ -13,7 +14,82 @@ class ListVotes extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            Action::make('startVote')
+                ->label('Start Vote')
+                // Apply the update method from the VotePolicy
+                ->authorize('create')
+                ->action(function () {
+                    // Check if a vote is already active
+                    $activeVote = \App\Models\Vote::where('active', true)->first();
+                    if ($activeVote) {
+                        // Make a notification to inform the user
+                        \Filament\Notifications\Notification::make()
+                            ->title('A vote is already active.')
+                            ->danger()
+                            ->send();
+                        return;
+                    } else {
+                        // Check that user can create a vote
+                        if (!\Gate::allows('create', new \App\Models\Vote())) {
+                            // Make a notification to inform the user
+                            \Filament\Notifications\Notification::make()
+                                ->title('You do not have permission to start a new vote.')
+                                ->danger()
+                                ->send();
+                            return;
+                        }
+                        // Start a new vote
+                        $newVote = new \App\Models\Vote();
+                        $newVote->begins_at = now();
+                        $newVote->active = true;
+                        $newVote->save();
+
+                        // Make a notification to inform the user
+                        \Filament\Notifications\Notification::make()
+                            ->title('A new vote has been started.')
+                            ->success()
+                            ->send();
+                    }
+                })
+                ->visible(fn () => \App\Models\Vote::where('active', true)->count() === 0),
+            Action::make('endVote')
+                ->label('End Vote')
+                ->action(function () {
+                    $activeVote = \App\Models\Vote::where('active', true)->first();
+                    // Check if user can update the active vote
+                    if (!\Gate::allows('update', $activeVote)) {
+                        // Make a notification to inform the user
+                        \Filament\Notifications\Notification::make()
+                            ->title('You do not have permission to end the active vote (you probably did not start it).')
+                            ->body('Owner is: ' . $activeVote?->user?->name ?? 'unknown')
+                            ->danger()
+                            ->send();
+                        return;
+                    }
+                    if ($activeVote) {
+                        $activeVote->ends_at = now();
+                        $activeVote->active = false;
+                        $activeVote->save();
+                        // Make a notification to inform the user
+                        \Filament\Notifications\Notification::make()
+                            ->title('The active vote has been ended.')
+                            ->success()
+                            ->send();
+                    } else if (\App\Models\Vote::where('active', true)->count() > 1 ) {
+                        // Make a notification to inform the user
+                        \Filament\Notifications\Notification::make()
+                            ->title('Error: More than one active vote found. Please check the database.')
+                            ->danger()
+                            ->send();
+                    } else {
+                        // Make a notification to inform the user
+                        \Filament\Notifications\Notification::make()
+                            ->title('No active vote found to end.')
+                            ->warning()
+                            ->send();
+                    }
+                })
+                ->visible(fn () => \App\Models\Vote::where('active', true)->count() === 1),
         ];
     }
 }
