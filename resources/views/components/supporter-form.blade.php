@@ -95,10 +95,8 @@
     document.querySelector("form.fcksvp-supporterform").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission
         let submitButton = this.querySelector('button[type="submit"]');
-        setTimeout(() => {
-            submitButton.disabled = true;
-            submitButton.innerText = "{{ __('step-2.form.button.processing') }}"; // Optional
-        }, 500);
+        submitButton.disabled = true;
+        submitButton.innerText = "{{ __('step-2.form.button.processing') }}";
         const formData = new FormData(event.target);
 
         // Send the POST request using Fetch API

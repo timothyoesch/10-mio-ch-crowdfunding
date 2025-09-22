@@ -76,10 +76,8 @@ form.fcksvp-donationform input[type="radio"] + label {
     document.querySelector("form.fcksvp-donationform").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent the default form submission
         let submitButton = this.querySelector('button[type="submit"]');
-        setTimeout(() => {
-            submitButton.disabled = true;
-            submitButton.innerText = "{{__('landing.form.button.processing')}}"; // Optional: Change button text to indicate processing
-        }, 500);
+        submitButton.disabled = true;
+        submitButton.innerText = "{{__('landing.form.button.processing')}}";
         const formData = new FormData(event.target);
         // Append type of donation
         formData.append("type", "perminute");
