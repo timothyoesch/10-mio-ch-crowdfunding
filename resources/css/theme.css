@@ -9,7 +9,7 @@
     width: calc(100% - 6vw);
     max-width: clamp(1050px, 84vw, 1150px);
     margin: 0 auto;
-    padding: clamp(15px, 3vw, 30px) clamp(15px, 5vw, 80px);
+    padding: clamp(15px, 3vw, 40px) clamp(15px, 5vw, 80px);
     background-color: white;
 }
 
