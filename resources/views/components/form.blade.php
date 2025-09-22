@@ -35,7 +35,7 @@
                 </div>
                 <div class="flex">
                     <p> {{ __('landing.form.after') }}</p>
-                    <a href="#faq" name="Häufige Fragen">
+                    <a href="#faq" aria-label="{{__('landing.faq.title')}}">
                         <x-heroicon-s-information-circle class="text-accent h-6 md:h-8 mr-2 shrink-0"/>
                     </a>
                 </div>
