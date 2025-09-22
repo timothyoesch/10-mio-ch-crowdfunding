@@ -16,7 +16,7 @@ class DonationSum extends StatsOverviewWidget
             Stat::make(
                 "Donations per Minute",
                 number_format(
-                    Donation::all()->sum("amount"),
+                    Donation::all()->sum("amount") / 100,
                     2,
                     '.',
                     "'"
@@ -25,7 +25,7 @@ class DonationSum extends StatsOverviewWidget
             Stat::make(
                 "Donations total",
                 number_format(
-                    Donation::all()->sum("amount") * Vote::getTotalDurationInSeconds() / 60,
+                    (Donation::all()->sum("amount") / 100) * Vote::getTotalDurationInSeconds() / 60,
                     2,
                     '.',
                     "'"
